@@ -37,13 +37,6 @@ const Benefits = () => {
         </div>
         
         <div className="max-w-6xl mx-auto mt-16">
-          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            Почему выбирают нас
-          </h3>
-          <p className="text-lg text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
-            Мы — эксперты по 2 электродам, а не по 2 000 позициям из каталога. Поставляем только то, что знаем в деталях.
-          </p>
-          
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;

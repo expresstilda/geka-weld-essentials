@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Catalog from "@/components/Catalog";
 import Benefits from "@/components/Benefits";
+import AboutSection from "@/components/AboutSection";
 import Testimonials from "@/components/Testimonials";
 import HowWeWork from "@/components/HowWeWork";
 import Guarantees from "@/components/Guarantees";
@@ -25,6 +26,7 @@ const Index = () => {
         <Hero />
         <Catalog onOrderClick={handleOrderClick} />
         <Benefits />
+        <AboutSection onContactClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} />
         <Testimonials />
         <HowWeWork />
         <Guarantees />
