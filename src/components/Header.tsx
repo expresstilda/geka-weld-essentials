@@ -16,10 +16,10 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-xl">G</span>
+              <span className="text-primary-foreground font-bold text-xl">Л</span>
             </div>
           <div>
-            <h1 className="font-bold text-xl text-primary">GEKA</h1>
+            <h1 className="font-bold text-xl text-primary">Лидер-М</h1>
             <p className="text-xs text-muted-foreground">Сварочные электроды</p>
           </div>
         </div>

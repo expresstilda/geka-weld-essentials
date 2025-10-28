@@ -4,9 +4,9 @@ const Footer = () => {
       <div className="container px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-bold text-xl mb-4">GEKA</h3>
+            <h3 className="font-bold text-xl mb-4">Лидер-М</h3>
             <p className="text-sm opacity-90">
-              Официальный дистрибьютор сварочных электродов GEKA (Gedik Welding) в России
+              Поставщик металлопроката и сварочных материалов GEKA (Gedik Welding) в России
             </p>
           </div>
           
@@ -30,7 +30,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm opacity-75">
-          <p>&copy; 2024 GEKA. Все права защищены.</p>
+          <p>&copy; 2024 Лидер-М. Все права защищены.</p>
         </div>
       </div>
     </footer>
