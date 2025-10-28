@@ -1,4 +1,6 @@
+import { useState } from "react";
 import ProductCard from "./ProductCard";
+import OrderDialog from "./OrderDialog";
 import laserB471 from "@/assets/laser-b47-1.jpg";
 import laserB472 from "@/assets/laser-b47-2.jpg";
 import laserB473 from "@/assets/laser-b47-3.jpg";
@@ -8,11 +10,14 @@ import elitE60132 from "@/assets/elit-e6013-2.jpg";
 import elitE60133 from "@/assets/elit-e6013-3.jpg";
 import elitE60134 from "@/assets/elit-e6013-4.jpg";
 
-interface CatalogProps {
-  onOrderClick: (productName: string) => void;
-}
+const Catalog = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState("");
 
-const Catalog = ({ onOrderClick }: CatalogProps) => {
+  const handleOrderClick = (productName: string) => {
+    setSelectedProduct(productName);
+    setDialogOpen(true);
+  };
   return (
     <section id="catalog" className="py-20 bg-background">
       <div className="container px-4">
@@ -48,7 +53,7 @@ const Catalog = ({ onOrderClick }: CatalogProps) => {
               "Ток/полярность: DC, обратная/прямая",
             ]}
             approvals="НАКС · DNV-GL · TÜV · ABS · CE"
-            onOrder={() => onOrderClick("GEKA LASER B47")}
+            onOrder={() => handleOrderClick("GEKA LASER B47")}
           />
           
           <ProductCard
@@ -73,10 +78,16 @@ const Catalog = ({ onOrderClick }: CatalogProps) => {
               "Ток/полярность: AC/DC, работает даже с простыми трансформаторами",
             ]}
             approvals="НАКС · DNV-GL · TÜV · ABS · CE"
-            onOrder={() => onOrderClick("GEKA ELIT E6013")}
+            onOrder={() => handleOrderClick("GEKA ELIT E6013")}
           />
         </div>
       </div>
+      
+      <OrderDialog 
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        productName={selectedProduct}
+      />
     </section>
   );
 };
