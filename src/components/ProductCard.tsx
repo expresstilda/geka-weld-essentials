@@ -2,11 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface ProductCardProps {
   title: string;
   subtitle: string;
-  image: string;
+  images: string[];
   price: string;
   features: string[];
   standards: string[];
@@ -18,7 +25,7 @@ interface ProductCardProps {
 const ProductCard = ({
   title,
   subtitle,
-  image,
+  images,
   price,
   features,
   standards,
@@ -44,18 +51,21 @@ const ProductCard = ({
       
       <CardContent className="p-6">
         <div className="mb-6 rounded-lg overflow-hidden bg-muted">
-          {!imageError ? (
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-64 object-cover"
-              onError={() => setImageError(true)}
-            />
-          ) : (
-            <div className="w-full h-64 flex items-center justify-center bg-muted">
-              <p className="text-muted-foreground">Изображение недоступно</p>
-            </div>
-          )}
+          <Carousel className="w-full">
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <img
+                    src={image}
+                    alt={`${title} - фото ${index + 1}`}
+                    className="w-full h-64 object-cover"
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-2" />
+            <CarouselNext className="right-2" />
+          </Carousel>
         </div>
         
         <div className="space-y-4">

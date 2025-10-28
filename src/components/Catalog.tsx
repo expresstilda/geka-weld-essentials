@@ -1,6 +1,12 @@
 import ProductCard from "./ProductCard";
-import electrodesB47 from "@/assets/electrodes-b47.jpg";
-import electrodesE6013 from "@/assets/electrodes-e6013.jpg";
+import laserB471 from "@/assets/laser-b47-1.jpg";
+import laserB472 from "@/assets/laser-b47-2.jpg";
+import laserB473 from "@/assets/laser-b47-3.jpg";
+import laserB474 from "@/assets/laser-b47-4.jpg";
+import elitE60131 from "@/assets/elit-e6013-1.jpg";
+import elitE60132 from "@/assets/elit-e6013-2.jpg";
+import elitE60133 from "@/assets/elit-e6013-3.jpg";
+import elitE60134 from "@/assets/elit-e6013-4.jpg";
 
 interface CatalogProps {
   onOrderClick: (productName: string) => void;
@@ -23,7 +29,7 @@ const Catalog = ({ onOrderClick }: CatalogProps) => {
           <ProductCard
             title="GEKA LASER B47"
             subtitle="Базовый электрод с пониженным водородом"
-            image={electrodesB47}
+            images={[laserB471, laserB472, laserB473, laserB474]}
             price="119 ₽/кг"
             features={[
               "Прочность шва до 600 МПа, ударная вязкость 47 Дж при −40 °C — для ответственных конструкций.",
@@ -48,7 +54,7 @@ const Catalog = ({ onOrderClick }: CatalogProps) => {
           <ProductCard
             title="GEKA ELIT E6013"
             subtitle="Рутиловый электрод общего назначения"
-            image={electrodesE6013}
+            images={[elitE60131, elitE60132, elitE60133, elitE60134]}
             price="105 ₽/кг"
             features={[
               "Лёгкий поджиг и стабильная дуга, мало брызг — сварщику проще и быстрее.",
