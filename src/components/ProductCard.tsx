@@ -9,8 +9,9 @@ interface ProductCardProps {
   image: string;
   price: string;
   features: string[];
-  specs: string[];
-  certificates: string[];
+  standards: string[];
+  technicalParams: string[];
+  approvals: string;
   onOrder: () => void;
 }
 
@@ -20,8 +21,9 @@ const ProductCard = ({
   image,
   price,
   features,
-  specs,
-  certificates,
+  standards,
+  technicalParams,
+  approvals,
   onOrder,
 }: ProductCardProps) => {
   const [imageError, setImageError] = useState(false);
@@ -58,8 +60,8 @@ const ProductCard = ({
         
         <div className="space-y-4">
           <div>
-            <h4 className="font-semibold mb-2 text-primary">Особенности:</h4>
-            <ul className="space-y-1">
+            <h4 className="font-semibold mb-2 text-primary">Ключевые особенности</h4>
+            <ul className="space-y-2">
               {features.map((feature, index) => (
                 <li key={index} className="text-sm text-muted-foreground flex items-start">
                   <span className="text-accent mr-2">•</span>
@@ -70,26 +72,32 @@ const ProductCard = ({
           </div>
           
           <div>
-            <h4 className="font-semibold mb-2 text-primary">Технические характеристики:</h4>
+            <h4 className="font-semibold mb-2 text-primary">Классификация (стандарты)</h4>
             <ul className="space-y-1">
-              {specs.map((spec, index) => (
+              {standards.map((standard, index) => (
                 <li key={index} className="text-sm text-muted-foreground flex items-start">
                   <span className="text-accent mr-2">•</span>
-                  <span>{spec}</span>
+                  <span>{standard}</span>
                 </li>
               ))}
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-2 text-primary">Сертификация:</h4>
-            <div className="flex flex-wrap gap-2">
-              {certificates.map((cert, index) => (
-                <Badge key={index} variant="outline">
-                  {cert}
-                </Badge>
+            <h4 className="font-semibold mb-2 text-primary">Технические параметры</h4>
+            <ul className="space-y-1">
+              {technicalParams.map((param, index) => (
+                <li key={index} className="text-sm text-muted-foreground flex items-start">
+                  <span className="text-accent mr-2">•</span>
+                  <span>{param}</span>
+                </li>
               ))}
-            </div>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="font-semibold mb-2 text-primary">Одобрения / Сертификаты</h4>
+            <p className="text-sm text-muted-foreground">{approvals}</p>
           </div>
         </div>
       </CardContent>
