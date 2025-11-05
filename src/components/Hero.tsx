@@ -21,10 +21,10 @@ const Hero = () => {
       <div className="container relative z-10 px-4 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Электроды GEKA оптом от 100 кг — для сварки без сюрпризов
+            Получите доступ к оптовому прайс-листу на сварочные материалы со СКИДКОЙ ДО 45%
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-12 max-w-3xl mx-auto">
-            Сертифицированные электроды E7018 и E6013 всегда на складе. Прочные швы, честная цена, быстрая доставка.
+            Поставки по РФ с подбором оптимальной логистики и выгодой до 30% на доставке. Работаем с юридическими лицами.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
