@@ -1,26 +1,21 @@
-import { Target, Package, Headphones, FileCheck } from "lucide-react";
+import { Factory, CreditCard, FileCheck } from "lucide-react";
 
 const Benefits = () => {
   const benefits = [
     {
-      icon: Target,
-      title: "Прямые поставки с завода GEKA",
-      description: "Официальный дистрибьютор Gedik Welding без посредников",
-    },
-    {
       icon: FileCheck,
-      title: "Паспорта качества и сертификаты",
-      description: "Полный комплект документов: НАКС, ISO, CE и другие",
+      title: "Полный пакет сертификатов",
+      description: "НАКС, РКО, ISO, РСТ",
     },
     {
-      icon: Package,
-      title: "Всегда на складе",
-      description: "Отгрузка в течение 1 рабочего дня после заявки",
+      icon: Factory,
+      title: "Прямая поставка от завода",
+      description: "Стабильное качество и гибкая ценовая политика",
     },
     {
-      icon: Headphones,
-      title: "Консультации по режимам сварки",
-      description: "Техническая поддержка от опытного технолога",
+      icon: CreditCard,
+      title: "Частичная оплата и отсрочка платежа",
+      description: "Для постоянных клиентов",
     },
   ];
 
@@ -37,7 +32,7 @@ const Benefits = () => {
         </div>
         
         <div className="max-w-6xl mx-auto mt-16">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
